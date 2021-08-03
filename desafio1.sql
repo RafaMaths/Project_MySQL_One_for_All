@@ -11,7 +11,7 @@ nome_artista VARCHAR(50) NOT NULL
 
 CREATE TABLE album(
 album_id INT PRIMARY KEY AUTO_INCREMENT,
-nome_album VARCHAR(50) NOT NULL
+nome_album VARCHAR(40) NOT NULL
 ) engine = InnoDB;
 
 CREATE TABLE plano(
