@@ -59,7 +59,6 @@ INSERT INTO plano (nome_plano, valor_plano) VALUES
 ('gratuito', 0),
 ('universitário', 5.99),
 ('familiar', 7.99);
-
 INSERT INTO usuario (nome_usuario, idade, plano_id) VALUES
 ('Thati', 23, 1),
 ('Cintia', 35, 3),
