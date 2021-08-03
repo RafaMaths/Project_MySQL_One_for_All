@@ -1,4 +1,4 @@
-CREATE VIEW top_hits_do_momento AS
+CREATE VIEW top_2_hits_do_momento AS
 SELECT c.nome_cancao AS `cancao`, COUNT(h.cancao_id) AS `reproducoes` FROM cancao c
 INNER JOIN historico h
 ON c.cancao_id = h.cancao_id
