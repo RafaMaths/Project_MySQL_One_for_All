@@ -11,7 +11,9 @@ nome_artista VARCHAR(50) NOT NULL
 
 CREATE TABLE album(
 album_id INT PRIMARY KEY AUTO_INCREMENT,
-nome_album VARCHAR(40) NOT NULL
+nome_album VARCHAR(40) NOT NULL,
+artista_id INT NOT NULL,
+FOREIGN KEY (artista_id) REFERENCES artista(artista_id) 
 ) engine = InnoDB;
 
 CREATE TABLE plano(
@@ -70,12 +72,12 @@ INSERT INTO artista (nome_artista) VALUES
 ('Peter Strong'),
 ('Walter Phoenix');
 
-INSERT INTO album (nome_album) VALUES
-('Envious'),
-('Exuberant'),
-('Hallowed Steam'),
-('Incandescent'),
-('Temporary Culture');
+INSERT INTO album (nome_album, artista_id) VALUES
+('Envious', 4),
+('Exuberant', 4),
+('Hallowed Steam', 3),
+('Incandescent', 2),
+('Temporary Culture', 1);
 
 INSERT INTO cancao (nome_cancao, artista_id, album_id) VALUES
 ('Celebration Of More', 3, 3),
