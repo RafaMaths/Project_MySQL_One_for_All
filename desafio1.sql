@@ -5,8 +5,8 @@ CREATE DATABASE SpotifyClone;
 USE SpotifyClone;
 
 CREATE TABLE artista(
-	artista_id INT PRIMARY KEY AUTO_INCREMENT,
-  nome_artista VARCHAR(50) NOT NULL
+artista_id INT PRIMARY KEY AUTO_INCREMENT,
+nome_artista VARCHAR(50) NOT NULL
 ) engine = InnoDB;
 
 CREATE TABLE album(
