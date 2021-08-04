@@ -13,4 +13,4 @@ INTO total_musica;
 RETURN total_musica;
 END $$
 DELIMITER ;
-select quantidade_musicas_no_historico('Bill');
+select quantidade_musicas_no_historico('Bill') INTO @total_musica;
