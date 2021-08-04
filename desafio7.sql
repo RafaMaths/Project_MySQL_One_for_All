@@ -4,5 +4,5 @@ INNER JOIN seguidor s
 ON a.artista_id = s.artista_id
 INNER JOIN album al
 ON  al.artista_id = s.artista_id
-GROUP BY album
+GROUP BY album, artista
 ORDER BY seguidores DESC, artista, album;
