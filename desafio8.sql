@@ -1,10 +1,10 @@
 DELIMITER $$
-CREATE TRIGGER trigger_usuario_delete AFTER DELETE ON usuario
+CREATE TRIGGER trigger_usuario_delete BEFORE DELETE ON usuario
 FOR EACH ROW
 BEGIN
 DELETE FROM seguidor
-WHERE seguidor.id_usuario = OLD.id_usuario;
+WHERE seguidor.usuario_id = OLD.usuario_id;
 DELETE FROM historico
-WHERE historico.id_usuario = OLD.id_usuario;
+WHERE historico.usuario_id = OLD.usuario_id;
 END $$
 DELIMITER ;
