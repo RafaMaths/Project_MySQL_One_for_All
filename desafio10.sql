@@ -1,16 +1,12 @@
 DELIMITER $$
-CREATE FUNCTION quantidade_musicas_no_historico(nomeUsuario VARCHAR(50))
-RETURNS VARCHAR(50) READS SQL DATA
+CREATE FUNCTION quantidade_musicas_no_historico(idUsuario INT)
+RETURNS INT READS SQL DATA
 BEGIN
 DECLARE total_musica INT;
-SELECT count(c.cancao_id) FROM cancao c
-INNER JOIN historico h
-ON c.cancao_id = h.cancao_id
-INNER JOIN usuario u
-ON u.usuario_id = h.usuario_id
-WHERE nomeUsuario = u.nome_usuario
+SELECT count(usuario_id) FROM historico
+WHERE usuario_id = idUsuario
 INTO total_musica;
 RETURN total_musica;
 END $$
 DELIMITER ;
-select quantidade_musicas_no_historico('Bill') INTO @total_musica;
+select quantidade_musicas_no_historico(3) INTO @total_musica;
